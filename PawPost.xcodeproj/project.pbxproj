@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FDA7AFD02C589432003E3F0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */; };
+		FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */; };
 		FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB205552C580B4800C0C3EF /* PawPostApp.swift */; };
 		FDB205582C580B4800C0C3EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB205572C580B4800C0C3EF /* ContentView.swift */; };
 		FDB2055A2C580B4A00C0C3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB205592C580B4A00C0C3EF /* Assets.xcassets */; };
@@ -14,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FDB205522C580B4800C0C3EF /* PawPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PawPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB205552C580B4800C0C3EF /* PawPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawPostApp.swift; sourceTree = "<group>"; };
 		FDB205572C580B4800C0C3EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +36,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FDA7AFD12C589798003E3F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FDA7AFD32C5897A4003E3F0D /* SubViews */,
+				FDA7AFD22C58979D003E3F0D /* Screens */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FDA7AFD22C58979D003E3F0D /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				FDB205552C580B4800C0C3EF /* PawPostApp.swift */,
+				FDB205572C580B4800C0C3EF /* ContentView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		FDA7AFD32C5897A4003E3F0D /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		FDA7AFD42C58B002003E3F0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		FDB205492C580B4800C0C3EF = {
 			isa = PBXGroup;
 			children = (
@@ -51,10 +88,11 @@
 		FDB205542C580B4800C0C3EF /* PawPost */ = {
 			isa = PBXGroup;
 			children = (
-				FDB205552C580B4800C0C3EF /* PawPostApp.swift */,
-				FDB205572C580B4800C0C3EF /* ContentView.swift */,
+				FDA7AFD42C58B002003E3F0D /* Extensions */,
+				FDA7AFD12C589798003E3F0D /* Views */,
 				FDB205592C580B4A00C0C3EF /* Assets.xcassets */,
 				FDB2055B2C580B4A00C0C3EF /* Preview Content */,
+				FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */,
 			);
 			path = PawPost;
 			sourceTree = "<group>";
@@ -125,6 +163,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA7AFD02C589432003E3F0D /* LaunchScreen.storyboard in Resources */,
 				FDB2055D2C580B4A00C0C3EF /* Preview Assets.xcassets in Resources */,
 				FDB2055A2C580B4A00C0C3EF /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +178,7 @@
 			files = (
 				FDB205582C580B4800C0C3EF /* ContentView.swift in Sources */,
 				FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */,
+				FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,8 +318,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,6 +328,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jayanth.programs.PawPost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -307,8 +352,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,6 +362,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jayanth.programs.PawPost;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
