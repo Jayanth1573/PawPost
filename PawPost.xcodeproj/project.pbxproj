@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		FDA7AFD02C589432003E3F0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */; };
 		FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */; };
+		FDA7AFD82C58B69F003E3F0D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD72C58B69F003E3F0D /* PostView.swift */; };
+		FDA7AFDA2C58B6AC003E3F0D /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD92C58B6AC003E3F0D /* FeedView.swift */; };
+		FDA7AFDD2C58BB98003E3F0D /* PostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFDC2C58BB98003E3F0D /* PostModel.swift */; };
+		FDA7AFDF2C58D2E7003E3F0D /* PostArrayObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFDE2C58D2E7003E3F0D /* PostArrayObject.swift */; };
+		FDA7AFE12C58D6B5003E3F0D /* CommentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFE02C58D6B5003E3F0D /* CommentsView.swift */; };
+		FDA7AFE32C590428003E3F0D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFE22C590428003E3F0D /* MessageView.swift */; };
+		FDA7AFE52C5906E4003E3F0D /* CommentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFE42C5906E4003E3F0D /* CommentModel.swift */; };
 		FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB205552C580B4800C0C3EF /* PawPostApp.swift */; };
 		FDB205582C580B4800C0C3EF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB205572C580B4800C0C3EF /* ContentView.swift */; };
 		FDB2055A2C580B4A00C0C3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB205592C580B4A00C0C3EF /* Assets.xcassets */; };
@@ -18,6 +25,13 @@
 /* Begin PBXFileReference section */
 		FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		FDA7AFD72C58B69F003E3F0D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		FDA7AFD92C58B6AC003E3F0D /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
+		FDA7AFDC2C58BB98003E3F0D /* PostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostModel.swift; sourceTree = "<group>"; };
+		FDA7AFDE2C58D2E7003E3F0D /* PostArrayObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostArrayObject.swift; sourceTree = "<group>"; };
+		FDA7AFE02C58D6B5003E3F0D /* CommentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsView.swift; sourceTree = "<group>"; };
+		FDA7AFE22C590428003E3F0D /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		FDA7AFE42C5906E4003E3F0D /* CommentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentModel.swift; sourceTree = "<group>"; };
 		FDB205522C580B4800C0C3EF /* PawPost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PawPost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDB205552C580B4800C0C3EF /* PawPostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PawPostApp.swift; sourceTree = "<group>"; };
 		FDB205572C580B4800C0C3EF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +64,8 @@
 			children = (
 				FDB205552C580B4800C0C3EF /* PawPostApp.swift */,
 				FDB205572C580B4800C0C3EF /* ContentView.swift */,
+				FDA7AFD92C58B6AC003E3F0D /* FeedView.swift */,
+				FDA7AFE02C58D6B5003E3F0D /* CommentsView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -57,6 +73,8 @@
 		FDA7AFD32C5897A4003E3F0D /* SubViews */ = {
 			isa = PBXGroup;
 			children = (
+				FDA7AFD72C58B69F003E3F0D /* PostView.swift */,
+				FDA7AFE22C590428003E3F0D /* MessageView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -67,6 +85,16 @@
 				FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FDA7AFDB2C58BB86003E3F0D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FDA7AFDC2C58BB98003E3F0D /* PostModel.swift */,
+				FDA7AFDE2C58D2E7003E3F0D /* PostArrayObject.swift */,
+				FDA7AFE42C5906E4003E3F0D /* CommentModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		FDB205492C580B4800C0C3EF = {
@@ -88,6 +116,7 @@
 		FDB205542C580B4800C0C3EF /* PawPost */ = {
 			isa = PBXGroup;
 			children = (
+				FDA7AFDB2C58BB86003E3F0D /* Models */,
 				FDA7AFD42C58B002003E3F0D /* Extensions */,
 				FDA7AFD12C589798003E3F0D /* Views */,
 				FDB205592C580B4A00C0C3EF /* Assets.xcassets */,
@@ -176,8 +205,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDA7AFDA2C58B6AC003E3F0D /* FeedView.swift in Sources */,
+				FDA7AFDD2C58BB98003E3F0D /* PostModel.swift in Sources */,
 				FDB205582C580B4800C0C3EF /* ContentView.swift in Sources */,
+				FDA7AFE32C590428003E3F0D /* MessageView.swift in Sources */,
 				FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */,
+				FDA7AFDF2C58D2E7003E3F0D /* PostArrayObject.swift in Sources */,
+				FDA7AFD82C58B69F003E3F0D /* PostView.swift in Sources */,
+				FDA7AFE52C5906E4003E3F0D /* CommentModel.swift in Sources */,
+				FDA7AFE12C58D6B5003E3F0D /* CommentsView.swift in Sources */,
 				FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,7 +356,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +390,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
