@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		FD0C58312C88F56E005B157B /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C58302C88F56E005B157B /* PostImageView.swift */; };
+		FD0D3EA72CB0427200F4C635 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */; };
 		FD0DFF4D2CB02CDF00980594 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */; };
+		FD0DFF4F2CB0343000980594 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */; };
 		FD45CC392C5DF3FB00C6B496 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45CC382C5DF3FB00C6B496 /* ImageGridView.swift */; };
 		FD5DD2972CAFF7CE00989CDF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DD2962CAFF7CE00989CDF /* ProfileView.swift */; };
 		FD5DD2992CAFF9E000989CDF /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DD2982CAFF9E000989CDF /* ProfileHeaderView.swift */; };
@@ -36,7 +38,9 @@
 /* Begin PBXFileReference section */
 		FD0C582F2C88C382005B157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FD0C58302C88F56E005B157B /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
+		FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
 		FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
+		FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
 		FD45CC382C5DF3FB00C6B496 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		FD5DD2962CAFF7CE00989CDF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FD5DD2982CAFF9E000989CDF /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -94,6 +98,8 @@
 				FD0C58302C88F56E005B157B /* PostImageView.swift */,
 				FD5DD2962CAFF7CE00989CDF /* ProfileView.swift */,
 				FD5DD29A2CB0082000989CDF /* SettingsView.swift */,
+				FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */,
+				FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -253,6 +259,7 @@
 				FD5DD2972CAFF7CE00989CDF /* ProfileView.swift in Sources */,
 				FD5E26322C5CF79F00CCFE8A /* BrowseView.swift in Sources */,
 				FDA7AFE52C5906E4003E3F0D /* CommentModel.swift in Sources */,
+				FD0D3EA72CB0427200F4C635 /* SettingsEditImageView.swift in Sources */,
 				FDA7AFE12C58D6B5003E3F0D /* CommentsView.swift in Sources */,
 				FD5DD2992CAFF9E000989CDF /* ProfileHeaderView.swift in Sources */,
 				FDE593C22C5E5AF300113718 /* UploadView.swift in Sources */,
@@ -260,6 +267,7 @@
 				FD5E26342C5CF81E00CCFE8A /* CarouselView.swift in Sources */,
 				FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */,
 				FD5DD29B2CB0082000989CDF /* SettingsView.swift in Sources */,
+				FD0DFF4F2CB0343000980594 /* SettingsEditTextView.swift in Sources */,
 				FD0DFF4D2CB02CDF00980594 /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

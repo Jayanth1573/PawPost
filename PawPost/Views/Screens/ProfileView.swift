@@ -11,8 +11,9 @@ struct ProfileView: View {
     var isMyProfile: Bool
     @State var profileDisplayName: String
     var profileId: String
-    
     var posts = PostArrayObject()
+    @State var showSettings: Bool = false
+    
     var body: some View {
         ScrollView(content: {
             ProfileHeaderView(profileDisplayName: $profileDisplayName)
@@ -25,7 +26,7 @@ struct ProfileView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: {
-                        
+                    showSettings.toggle()
                     }, label: {
                         Image(systemName: "line.horizontal.3")
                     })
@@ -33,6 +34,12 @@ struct ProfileView: View {
                     .opacity(isMyProfile ? 1.0 : 0.0)
             }
         }
+        .sheet(isPresented: $showSettings) {
+            SettingsView()
+        }
+//        .fullScreenCover(isPresented: $showSettings) {
+//            SettingsView()
+//        }
     }
 }
 

@@ -25,8 +25,11 @@ struct SettingsRowView: View {
             .frame(width: 36, height: 36, alignment: .center)
             
             Text(text)
+                .foregroundStyle(Color.primary)
             Spacer()
             Image(systemName: "chevron.right")
+                .font(.headline)
+                .foregroundStyle(Color.primary)
         }
         .padding(.vertical,4)
     }

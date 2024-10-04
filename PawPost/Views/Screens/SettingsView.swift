@@ -9,6 +9,17 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.presentationMode) var presentationMode
+    
+    // MARK: Functions
+    func openCustonURL(urlstring: String) {
+        guard let url = URL(string: urlstring) else { return }
+        
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url)
+        }
+            
+    }
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -30,9 +41,26 @@ struct SettingsView: View {
 
                 // MARK: Section 2: Profile
                 GroupBox {
-                    SettingsRowView(leftIcon: "pencil", text: "Display name", color: Color.MyTheme.purpleColor)
-                    SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
-                    SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
+                    NavigationLink {
+                        SettingsEditTextView(submissionText: "Current Display Name", title: "Display Name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here...")
+                    } label: {
+                        SettingsRowView(leftIcon: "pencil", text: "Display name", color: Color.MyTheme.purpleColor)
+                    }
+
+                    NavigationLink {
+                        SettingsEditTextView(submissionText: "Current Bio here", title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be seen on your profile.", placeholder: "Your bio here...")
+                    } label: {
+                        SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
+                    }
+                    
+                    NavigationLink {
+                        SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your posts.", selectedImage: UIImage(named: "dog1")!)
+                    } label: {
+                        SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
+                    }
+
+                    
+                    
                     SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
                 } label: {
                     SettingsLabelView(labelText: "Profile", labelImage: "person.fill")
@@ -41,9 +69,26 @@ struct SettingsView: View {
                 
                 //MARK: Section 3: Application
                 GroupBox {
-                    SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
-                    SettingsRowView(leftIcon: "folder.fill", text: "Terms and Conditions", color: Color.MyTheme.yellowColor)
-                    SettingsRowView(leftIcon: "globe", text: "PawPost's website", color: Color.MyTheme.yellowColor)
+                    
+                    Button {
+                        openCustonURL(urlstring: "https://www.google.com")
+                    } label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Privacy Policy", color: Color.MyTheme.yellowColor)
+                    }
+
+                    
+                    Button {
+                        openCustonURL(urlstring: "https://www.yahoo.com")
+                    } label: {
+                        SettingsRowView(leftIcon: "folder.fill", text: "Terms and Conditions", color: Color.MyTheme.yellowColor)
+                    }
+                    
+                    Button {
+                        openCustonURL(urlstring: "https://www.bing.com")
+                    } label: {
+                        SettingsRowView(leftIcon: "globe", text: "PawPost's website", color: Color.MyTheme.yellowColor)
+                    }
+                    
                 } label: {
                     SettingsLabelView(labelText: "Application", labelImage: "apps.iphone")
                 }
