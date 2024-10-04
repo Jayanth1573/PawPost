@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    var currentUserId: String? = nil
     var body: some View {
         TabView {
             NavigationStack{
@@ -26,17 +27,25 @@ struct ContentView: View {
             }
             
             UploadView()
-            .tabItem {
-                Image(systemName: "square.and.arrow.up.fill")
-                Text("Upload")
-            }
-            NavigationStack {
-                ProfileView(isMyProfile: true, profileDisplayName: "My Profile", profileId: "")
-            }
                 .tabItem {
-                    Image(systemName: "person.fill")
-                    Text("Profile")
+                    Image(systemName: "square.and.arrow.up.fill")
+                    Text("Upload")
                 }
+            
+            ZStack {
+                if currentUserId != nil {
+                    NavigationStack {
+                        ProfileView(isMyProfile: true, profileDisplayName: "My Profile", profileId: "")
+                    }
+                } else {
+                    SignUpView()
+                }
+               
+            }
+            .tabItem {
+                Image(systemName: "person.fill")
+                Text("Profile")
+            }
         }
         .onAppear(){
             UITabBar.appearance().backgroundColor = .white

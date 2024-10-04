@@ -11,6 +11,7 @@
 		FD0D3EA72CB0427200F4C635 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */; };
 		FD0DFF4D2CB02CDF00980594 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */; };
 		FD0DFF4F2CB0343000980594 /* SettingsEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */; };
+		FD11FFF42CB05C9A00F8A7FF /* LikeAnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD11FFF32CB05C9A00F8A7FF /* LikeAnimationView.swift */; };
 		FD45CC392C5DF3FB00C6B496 /* ImageGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD45CC382C5DF3FB00C6B496 /* ImageGridView.swift */; };
 		FD5DD2972CAFF7CE00989CDF /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DD2962CAFF7CE00989CDF /* ProfileView.swift */; };
 		FD5DD2992CAFF9E000989CDF /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DD2982CAFF9E000989CDF /* ProfileHeaderView.swift */; };
@@ -18,6 +19,10 @@
 		FD5DD29F2CB00A1800989CDF /* SettingsLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5DD29E2CB00A1800989CDF /* SettingsLabelView.swift */; };
 		FD5E26322C5CF79F00CCFE8A /* BrowseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E26312C5CF79F00CCFE8A /* BrowseView.swift */; };
 		FD5E26342C5CF81E00CCFE8A /* CarouselView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD5E26332C5CF81E00CCFE8A /* CarouselView.swift */; };
+		FDA484042CB04D17009399EF /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA484032CB04D17009399EF /* SignUpView.swift */; };
+		FDA484062CB04FCF009399EF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA484052CB04FCF009399EF /* OnboardingView.swift */; };
+		FDA484082CB05393009399EF /* SignInWithAppleButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA484072CB05393009399EF /* SignInWithAppleButtonCustom.swift */; };
+		FDA4840A2CB05572009399EF /* OnboardingViewPart2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA484092CB05572009399EF /* OnboardingViewPart2.swift */; };
 		FDA7AFD02C589432003E3F0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */; };
 		FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */; };
 		FDA7AFD82C58B69F003E3F0D /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA7AFD72C58B69F003E3F0D /* PostView.swift */; };
@@ -41,6 +46,7 @@
 		FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
 		FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditTextView.swift; sourceTree = "<group>"; };
+		FD11FFF32CB05C9A00F8A7FF /* LikeAnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeAnimationView.swift; sourceTree = "<group>"; };
 		FD45CC382C5DF3FB00C6B496 /* ImageGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGridView.swift; sourceTree = "<group>"; };
 		FD5DD2962CAFF7CE00989CDF /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		FD5DD2982CAFF9E000989CDF /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
@@ -48,6 +54,10 @@
 		FD5DD29E2CB00A1800989CDF /* SettingsLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsLabelView.swift; sourceTree = "<group>"; };
 		FD5E26312C5CF79F00CCFE8A /* BrowseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseView.swift; sourceTree = "<group>"; };
 		FD5E26332C5CF81E00CCFE8A /* CarouselView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselView.swift; sourceTree = "<group>"; };
+		FDA484032CB04D17009399EF /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		FDA484052CB04FCF009399EF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		FDA484072CB05393009399EF /* SignInWithAppleButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleButtonCustom.swift; sourceTree = "<group>"; };
+		FDA484092CB05572009399EF /* OnboardingViewPart2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewPart2.swift; sourceTree = "<group>"; };
 		FDA7AFCF2C589432003E3F0D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		FDA7AFD72C58B69F003E3F0D /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
@@ -100,6 +110,9 @@
 				FD5DD29A2CB0082000989CDF /* SettingsView.swift */,
 				FD0DFF4E2CB0343000980594 /* SettingsEditTextView.swift */,
 				FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */,
+				FDA484032CB04D17009399EF /* SignUpView.swift */,
+				FDA484052CB04FCF009399EF /* OnboardingView.swift */,
+				FDA484092CB05572009399EF /* OnboardingViewPart2.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -115,6 +128,8 @@
 				FD5DD2982CAFF9E000989CDF /* ProfileHeaderView.swift */,
 				FD5DD29E2CB00A1800989CDF /* SettingsLabelView.swift */,
 				FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */,
+				FDA484072CB05393009399EF /* SignInWithAppleButtonCustom.swift */,
+				FD11FFF32CB05C9A00F8A7FF /* LikeAnimationView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -247,9 +262,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA7AFDA2C58B6AC003E3F0D /* FeedView.swift in Sources */,
+				FDA484082CB05393009399EF /* SignInWithAppleButtonCustom.swift in Sources */,
 				FDA7AFDD2C58BB98003E3F0D /* PostModel.swift in Sources */,
 				FD5DD29F2CB00A1800989CDF /* SettingsLabelView.swift in Sources */,
 				FD0C58312C88F56E005B157B /* PostImageView.swift in Sources */,
+				FDA484042CB04D17009399EF /* SignUpView.swift in Sources */,
 				FDB205582C580B4800C0C3EF /* ContentView.swift in Sources */,
 				FDA7AFE32C590428003E3F0D /* MessageView.swift in Sources */,
 				FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */,
@@ -258,16 +275,19 @@
 				FDA7AFD82C58B69F003E3F0D /* PostView.swift in Sources */,
 				FD5DD2972CAFF7CE00989CDF /* ProfileView.swift in Sources */,
 				FD5E26322C5CF79F00CCFE8A /* BrowseView.swift in Sources */,
+				FD11FFF42CB05C9A00F8A7FF /* LikeAnimationView.swift in Sources */,
 				FDA7AFE52C5906E4003E3F0D /* CommentModel.swift in Sources */,
 				FD0D3EA72CB0427200F4C635 /* SettingsEditImageView.swift in Sources */,
 				FDA7AFE12C58D6B5003E3F0D /* CommentsView.swift in Sources */,
 				FD5DD2992CAFF9E000989CDF /* ProfileHeaderView.swift in Sources */,
 				FDE593C22C5E5AF300113718 /* UploadView.swift in Sources */,
+				FDA484062CB04FCF009399EF /* OnboardingView.swift in Sources */,
 				FDB5CB6B2C5EBFB900ED2A32 /* ImagePicker.swift in Sources */,
 				FD5E26342C5CF81E00CCFE8A /* CarouselView.swift in Sources */,
 				FDA7AFD62C58B013003E3F0D /* Color+Extensions.swift in Sources */,
 				FD5DD29B2CB0082000989CDF /* SettingsView.swift in Sources */,
 				FD0DFF4F2CB0343000980594 /* SettingsEditTextView.swift in Sources */,
+				FDA4840A2CB05572009399EF /* OnboardingViewPart2.swift in Sources */,
 				FD0DFF4D2CB02CDF00980594 /* SettingsRowView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -23,7 +23,7 @@ struct CarouselView: View {
         }
         .tabViewStyle(PageTabViewStyle())
         .frame(height: 300)
-        .animation(.default, value: 1)
+        .animation(.default, value: selection)
         .onAppear(perform: {
             if !timerAdded {
                 addTimer()
