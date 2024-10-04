@@ -24,16 +24,20 @@ struct ContentView: View {
                 Image(systemName: "magnifyingglass")
                 Text("Browse")
             }
-            Text("Screen 3")
-                .tabItem {
-                    Image(systemName: "square.and.arrow.up.fill")
-                    Text("Upload")
-                }
+            
+            UploadView()
+            .tabItem {
+                Image(systemName: "square.and.arrow.up.fill")
+                Text("Upload")
+            }
             Text("Screen 4")
                 .tabItem {
                     Image(systemName: "person.fill")
                     Text("Profile")
                 }
+        }
+        .onAppear(){
+            UITabBar.appearance().backgroundColor = .white
         }
         .accentColor(Color.MyTheme.purpleColor)
     }

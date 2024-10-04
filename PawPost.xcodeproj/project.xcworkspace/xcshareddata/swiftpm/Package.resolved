@@ -1,0 +1,15 @@
+{
+  "originHash" : "ced00e2a7fb2dd33a17dae2559bb37bb51605a54e70a6f97c28c5f6612044065",
+  "pins" : [
+    {
+      "identity" : "quizappshareddto",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Jayanth1573/QuizAppSharedDTO.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "80bae2cd923c7450557effd9174ab07427f4a7c1"
+      }
+    }
+  ],
+  "version" : 3
+}
