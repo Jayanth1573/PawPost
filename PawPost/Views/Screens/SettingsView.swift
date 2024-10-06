@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     
     // MARK: Functions
@@ -123,6 +125,7 @@ struct SettingsView: View {
                 
             }
         }
+        .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
 }
 

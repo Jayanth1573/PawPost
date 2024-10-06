@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PostImageView: View {
     
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
     @State var captionText: String = ""
     @Binding var imageSelected: UIImage
@@ -38,7 +39,7 @@ struct PostImageView: View {
                     .padding()
                     .frame(height: 60)
                     .frame(maxWidth: .infinity)
-                    .background(Color.MyTheme.beigeColor)
+                    .background(colorScheme == .light ? Color.MyTheme.beigeColor : Color.MyTheme.purpleColor)
                     .cornerRadius(12)
                     .font(.headline)
                     .padding(.horizontal)
@@ -53,11 +54,11 @@ struct PostImageView: View {
                         .padding()
                         .frame(height: 60)
                         .frame(maxWidth: .infinity)
-                        .background(Color.MyTheme.purpleColor)
+                        .background(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
                         .cornerRadius(12)
                         .padding(.horizontal)
                 })
-                .accentColor(Color.MyTheme.yellowColor)
+                .accentColor(colorScheme == .light ? Color.MyTheme.yellowColor : Color.MyTheme.purpleColor)
             }
         }
     }

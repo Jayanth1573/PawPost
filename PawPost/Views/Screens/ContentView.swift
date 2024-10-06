@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     var currentUserId: String? = nil
     var body: some View {
         TabView {
@@ -47,10 +48,12 @@ struct ContentView: View {
                 Text("Profile")
             }
         }
-        .onAppear(){
-            UITabBar.appearance().backgroundColor = .white
+        .onAppear {
+            let tabBarAppearance = UITabBarAppearance()
+            tabBarAppearance.configureWithDefaultBackground()
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
         }
-        .accentColor(Color.MyTheme.purpleColor)
+        .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
     }
 }
 

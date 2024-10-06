@@ -119,7 +119,7 @@ struct PostView: View {
                             .fontWeight(.medium)
                             .foregroundStyle(.primary)
                     }
-                    
+                    .accentColor(Color.primary)
                     
                     
                     Spacer()
@@ -185,8 +185,8 @@ struct PostView: View {
                     } label: {
                         Image(systemName: "bubble.middle.bottom")
                             .font(.title3)
-                            .foregroundStyle(.primary)
                     }
+                    .accentColor(Color.primary)
                     
                     Button {
                         sharePost()

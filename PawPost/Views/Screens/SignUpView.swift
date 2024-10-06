@@ -28,6 +28,7 @@ struct SignUpView: View {
                 .font(.headline)
                 .fontWeight(.medium)
                 .multilineTextAlignment(.center)
+                .foregroundStyle(Color.MyTheme.purpleColor)
             
             Button {
                 showOnboarding.toggle()

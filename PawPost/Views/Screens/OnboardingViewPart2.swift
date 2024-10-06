@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct OnboardingViewPart2: View {
+    @Environment(\.colorScheme) var colorScheme
     @State var displayName: String = ""
     @State var showImagePicker: Bool = false
     
@@ -26,7 +27,8 @@ struct OnboardingViewPart2: View {
                 .fontWeight(.bold)
                 .foregroundStyle(Color.MyTheme.yellowColor)
             
-            TextField("Add your name here...", text: $displayName)
+            TextField("", text: $displayName, prompt: Text("Add your name here...").foregroundColor(Color.gray))
+                .foregroundStyle(Color.black)
                 .padding()
                 .frame(height: 60)
                 .frame(maxWidth: .infinity)
@@ -35,6 +37,7 @@ struct OnboardingViewPart2: View {
                 .font(.headline)
                 .textInputAutocapitalization(.sentences)
                 .padding(.horizontal)
+    
             
             
             Button {
@@ -62,6 +65,7 @@ struct OnboardingViewPart2: View {
             createProfile()
         } content: {
             ImagePicker(imageSelected: $imageSelected, sourceType: $sourceType)
+                .accentColor(colorScheme == .light ? Color.MyTheme.purpleColor : Color.MyTheme.yellowColor)
         }
 
     }
