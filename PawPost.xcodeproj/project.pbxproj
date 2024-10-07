@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		375C9EA31A99B8D4609946D1 /* Pods_PawPost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1412BEA9FCE522E688194236 /* Pods_PawPost.framework */; };
 		FD0C58312C88F56E005B157B /* PostImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0C58302C88F56E005B157B /* PostImageView.swift */; };
 		FD0D3EA72CB0427200F4C635 /* SettingsEditImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */; };
 		FD0DFF4D2CB02CDF00980594 /* SettingsRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD0DFF4C2CB02CDF00980594 /* SettingsRowView.swift */; };
@@ -37,10 +38,14 @@
 		FDB2055A2C580B4A00C0C3EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB205592C580B4A00C0C3EF /* Assets.xcassets */; };
 		FDB2055D2C580B4A00C0C3EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2055C2C580B4A00C0C3EF /* Preview Assets.xcassets */; };
 		FDB5CB6B2C5EBFB900ED2A32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB5CB6A2C5EBFB900ED2A32 /* ImagePicker.swift */; };
+		FDD3E0052CB29A1F005DEA95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FDD3E0042CB29A1F005DEA95 /* GoogleService-Info.plist */; };
 		FDE593C22C5E5AF300113718 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE593C12C5E5AF200113718 /* UploadView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1412BEA9FCE522E688194236 /* Pods_PawPost.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PawPost.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9E26AFD061A169FCCB47481 /* Pods-PawPost.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PawPost.release.xcconfig"; path = "Target Support Files/Pods-PawPost/Pods-PawPost.release.xcconfig"; sourceTree = "<group>"; };
+		DDB7BAE700128DFD77301084 /* Pods-PawPost.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PawPost.debug.xcconfig"; path = "Target Support Files/Pods-PawPost/Pods-PawPost.debug.xcconfig"; sourceTree = "<group>"; };
 		FD0C582F2C88C382005B157B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FD0C58302C88F56E005B157B /* PostImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostImageView.swift; sourceTree = "<group>"; };
 		FD0D3EA62CB0427200F4C635 /* SettingsEditImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsEditImageView.swift; sourceTree = "<group>"; };
@@ -73,6 +78,7 @@
 		FDB205592C580B4A00C0C3EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FDB2055C2C580B4A00C0C3EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FDB5CB6A2C5EBFB900ED2A32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		FDD3E0042CB29A1F005DEA95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDE593C12C5E5AF200113718 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,12 +87,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				375C9EA31A99B8D4609946D1 /* Pods_PawPost.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4327FB537CB6437C3EAA98B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1412BEA9FCE522E688194236 /* Pods_PawPost.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A2E6A49CFDCBB5B9B313F55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDB7BAE700128DFD77301084 /* Pods-PawPost.debug.xcconfig */,
+				B9E26AFD061A169FCCB47481 /* Pods-PawPost.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FDA7AFD12C589798003E3F0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +181,8 @@
 			children = (
 				FDB205542C580B4800C0C3EF /* PawPost */,
 				FDB205532C580B4800C0C3EF /* Products */,
+				7A2E6A49CFDCBB5B9B313F55 /* Pods */,
+				4327FB537CB6437C3EAA98B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				FD0C582F2C88C382005B157B /* Info.plist */,
+				FDD3E0042CB29A1F005DEA95 /* GoogleService-Info.plist */,
 				FDA7AFDB2C58BB86003E3F0D /* Models */,
 				FDA7AFD42C58B002003E3F0D /* Extensions */,
 				FDA7AFD12C589798003E3F0D /* Views */,
@@ -197,9 +224,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDB205602C580B4A00C0C3EF /* Build configuration list for PBXNativeTarget "PawPost" */;
 			buildPhases = (
+				359E6F83E6DA539A7D95A491 /* [CP] Check Pods Manifest.lock */,
 				FDB2054E2C580B4800C0C3EF /* Sources */,
 				FDB2054F2C580B4800C0C3EF /* Frameworks */,
 				FDB205502C580B4800C0C3EF /* Resources */,
+				992E2FC6AACE84EAED3FF1F3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -218,7 +247,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					FDB205512C580B4800C0C3EF = {
 						CreatedOnToolsVersion = 15.4;
@@ -249,12 +278,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDA7AFD02C589432003E3F0D /* LaunchScreen.storyboard in Resources */,
+				FDD3E0052CB29A1F005DEA95 /* GoogleService-Info.plist in Resources */,
 				FDB2055D2C580B4A00C0C3EF /* Preview Assets.xcassets in Resources */,
 				FDB2055A2C580B4A00C0C3EF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		359E6F83E6DA539A7D95A491 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PawPost-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		992E2FC6AACE84EAED3FF1F3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PawPost/Pods-PawPost-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PawPost/Pods-PawPost-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PawPost/Pods-PawPost-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FDB2054E2C580B4800C0C3EF /* Sources */ = {
@@ -416,6 +488,7 @@
 		};
 		FDB205612C580B4A00C0C3EF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDB7BAE700128DFD77301084 /* Pods-PawPost.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -424,8 +497,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PawPost/Preview Content\"";
 				DEVELOPMENT_TEAM = JYLX786CHY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PawPost/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PawPost;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera at the user's request to take a photo.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This allows the app to access the photo library to import or save a photo at user's request";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -433,7 +508,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +528,7 @@
 		};
 		FDB205622C580B4A00C0C3EF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9E26AFD061A169FCCB47481 /* Pods-PawPost.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -461,8 +537,10 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PawPost/Preview Content\"";
 				DEVELOPMENT_TEAM = JYLX786CHY;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = PawPost/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PawPost;
 				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera at the user's request to take a photo.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "This allows the app to access the photo library to import or save a photo at user's request";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -470,7 +548,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
