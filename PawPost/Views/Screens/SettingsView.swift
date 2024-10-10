@@ -11,6 +11,7 @@ struct SettingsView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
+    @State var showSignOutError: Bool = false
     
     // MARK: Functions
     func openCustonURL(urlstring: String) {
@@ -22,6 +23,21 @@ struct SettingsView: View {
             
     }
     
+    func signOut() {
+        AuthService.instance.logOutUser { success in
+            if success {
+                print("Successfully logged out")
+                
+                // dismiss settings view
+                presentationMode.wrappedValue.dismiss()
+            } else {
+                print("Error logging out")
+                self.showSignOutError.toggle()
+            }
+        }
+    }
+    
+    // MARK: View
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -61,9 +77,17 @@ struct SettingsView: View {
                         SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                     }
 
+                    Button {
+                        signOut()
+                    } label: {
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                    }
+                    .alert(isPresented: $showSignOutError) {
+                        return Alert(title: Text("Error signing out!"))
+                    }
                     
                     
-                    SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                    
                 } label: {
                     SettingsLabelView(labelText: "Profile", labelImage: "person.fill")
                 }

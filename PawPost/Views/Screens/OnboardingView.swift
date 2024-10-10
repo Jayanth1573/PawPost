@@ -6,10 +6,74 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct OnboardingView: View {
     @Environment(\.presentationMode) var presentationMode
     @State var showOnboardingPart2: Bool = false
+    @State var showError: Bool = false
+    @StateObject var vm = SignInWithGoogle()
+    
+    
+    @State var displayName: String = ""
+    @State var email: String = ""
+    @State var providerId: String = ""
+    @State var provider: String = ""
+    
+    //MARK: Functions
+    func connectToFirebase(name: String, email: String, provider: String, credential: AuthCredential){
+        
+        AuthService.instance.loginUserToFirebase(credential: credential) { returnedProviderID, isError, isNewUser, returnedUserID in
+            
+            if let newUser = isNewUser {
+                if newUser {
+                    // newUser
+                    if let providerId = returnedProviderID, !isError {
+                        // success
+                        
+                        // new user, continue with onboarding view part 2
+                        self.displayName = name
+                        self.email = email
+                        self.providerId = providerId
+                        self.provider = provider
+                        
+                        self.showOnboardingPart2.toggle()
+                    } else {
+                        // error
+                        print("error getting provider ID from login user to firebase")
+                        self.showError.toggle()
+                    }
+                } else {
+                    // existing user
+                    if let userID = returnedUserID {
+                        // success, login to app
+                        AuthService.instance.loginUserToApp(userID: userID) { success in
+                            if success {
+                                print("Succesfully logged in existing user")
+                                presentationMode.wrappedValue.dismiss()
+                            } else {
+                                print("Error logging in existing user into the app")
+                                self.showError.toggle()
+                            }
+                        }
+                        
+                    } else {
+                        // error
+                        print("error getting provider ID from login user to firebase")
+                        self.showError.toggle()
+                    }
+                }
+            } else {
+                // error
+                print("error getting into from login user to firebase")
+                self.showError.toggle()
+            }
+            
+        }
+    }
+    
+    
+    //MARK: View
     var body: some View {
         VStack(spacing: 10){
             Image("logo.transparent")
@@ -39,7 +103,8 @@ struct OnboardingView: View {
             }
             
             Button {
-                showOnboardingPart2.toggle()
+                vm.signInWithGoogle(view: self)
+                //                showOnboardingPart2.toggle()
             } label: {
                 HStack {
                     Image(systemName: "globe")
@@ -68,12 +133,17 @@ struct OnboardingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.MyTheme.beigeColor)
         .edgesIgnoringSafeArea(.all)
-        .fullScreenCover(isPresented: $showOnboardingPart2) {
-            OnboardingViewPart2()
+        .fullScreenCover(isPresented: $showOnboardingPart2, onDismiss: {
+            self.presentationMode.wrappedValue.dismiss()
+        }) {
+            OnboardingViewPart2(displayName: $displayName, email: $email, providerId: $providerId, provider: $provider)
+        }
+        .alert(isPresented: $showError) {
+            return Alert(title: Text("Error signing in!"))
         }
         
-        
     }
+    
 }
 
 #Preview {

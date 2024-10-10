@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
-    var currentUserId: String? = nil
+    @AppStorage(CurrentUserDefaults.userID) var currentUserId: String?
     var body: some View {
         TabView {
             NavigationStack{
