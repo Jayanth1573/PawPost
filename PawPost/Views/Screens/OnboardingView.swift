@@ -50,7 +50,7 @@ struct OnboardingView: View {
                         AuthService.instance.loginUserToApp(userID: userID) { success in
                             if success {
                                 print("Succesfully logged in existing user")
-                                presentationMode.wrappedValue.dismiss()
+                                self.presentationMode.wrappedValue.dismiss()
                             } else {
                                 print("Error logging in existing user into the app")
                                 self.showError.toggle()
