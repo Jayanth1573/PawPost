@@ -13,12 +13,25 @@ struct ProfileView: View {
     var isMyProfile: Bool
     @State var profileDisplayName: String
     var profileId: String
-    var posts = PostArrayObject()
+    var posts: PostArrayObject
     @State var showSettings: Bool = false
     
+    @State var profileImage: UIImage = UIImage(named: "logo.loading")!
+    
+    
+    // MARK: Functions
+    
+    func getProfileImage() {
+        ImageManager.instance.downloadProfileImage(userID: profileId) { returnedImage in
+            if let image = returnedImage {
+                profileImage = image
+            }
+        }
+    }
+    // MARK: View
     var body: some View {
         ScrollView(content: {
-            ProfileHeaderView(profileDisplayName: $profileDisplayName)
+            ProfileHeaderView(profileDisplayName: $profileDisplayName, profileImage: $profileImage)
             Divider()
             ImageGridView(posts: posts)
         })
@@ -37,6 +50,9 @@ struct ProfileView: View {
             }
             
         }
+        .onAppear {
+            getProfileImage()
+        }
         .sheet(isPresented: $showSettings) {
             SettingsView()
         }
@@ -48,7 +64,7 @@ struct ProfileView: View {
 
 #Preview {
     NavigationStack {
-        ProfileView(isMyProfile: true, profileDisplayName: "Jayanth", profileId: "")
+        ProfileView(isMyProfile: true, profileDisplayName: "Jayanth", profileId: "", posts: PostArrayObject(userID: ""))
     }
     
 }

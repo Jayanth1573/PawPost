@@ -11,17 +11,20 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage(CurrentUserDefaults.userID) var currentUserId: String?
     @AppStorage(CurrentUserDefaults.diplayName) var currentDisplayName: String?
+    
+    let feedPosts = PostArrayObject(shuffled: false)
+    let browsePosts = PostArrayObject(shuffled: true)
     var body: some View {
         TabView {
             NavigationStack{
-                FeedView(posts: PostArrayObject(), title: "Home")
+                FeedView(posts: feedPosts, title: "Home")
             }
             .tabItem {
                 Image(systemName: "house.fill")
                 Text("Home")
             }
             NavigationStack {
-                BrowseView()
+                BrowseView(posts: browsePosts)
             }
             .tabItem {
                 Image(systemName: "magnifyingglass")
@@ -37,7 +40,7 @@ struct ContentView: View {
             ZStack {
                 if let userID = currentUserId,let displayName = currentDisplayName {
                     NavigationStack {
-                        ProfileView(isMyProfile: true, profileDisplayName: displayName, profileId: userID)
+                        ProfileView(isMyProfile: true, profileDisplayName: displayName, profileId: userID, posts: PostArrayObject(userID: userID))
                     }
                 } else {
                     SignUpView()

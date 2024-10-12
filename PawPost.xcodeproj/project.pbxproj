@@ -44,6 +44,7 @@
 		FDB2055D2C580B4A00C0C3EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDB2055C2C580B4A00C0C3EF /* Preview Assets.xcassets */; };
 		FDB5CB6B2C5EBFB900ED2A32 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB5CB6A2C5EBFB900ED2A32 /* ImagePicker.swift */; };
 		FDE593C22C5E5AF300113718 /* UploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDE593C12C5E5AF200113718 /* UploadView.swift */; };
+		FDFD32832CBAED7C00F49D22 /* LazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD32822CBAED7C00F49D22 /* LazyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,6 +90,7 @@
 		FDB5CB6A2C5EBFB900ED2A32 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		FDE593C12C5E5AF200113718 /* UploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadView.swift; sourceTree = "<group>"; };
 		FDF09DE62CB465A700F70520 /* PawPost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PawPost.entitlements; sourceTree = "<group>"; };
+		FDFD32822CBAED7C00F49D22 /* LazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -202,6 +204,7 @@
 			children = (
 				FDA7AFD52C58B013003E3F0D /* Color+Extensions.swift */,
 				FDA462322CB7AABE0092835E /* Enums & Structs.swift */,
+				FDFD32822CBAED7C00F49D22 /* LazyView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				FDA7AFE32C590428003E3F0D /* MessageView.swift in Sources */,
 				FDB205562C580B4800C0C3EF /* PawPostApp.swift in Sources */,
 				FDA7AFDF2C58D2E7003E3F0D /* PostArrayObject.swift in Sources */,
+				FDFD32832CBAED7C00F49D22 /* LazyView.swift in Sources */,
 				FD45CC392C5DF3FB00C6B496 /* ImageGridView.swift in Sources */,
 				FDA7AFD82C58B69F003E3F0D /* PostView.swift in Sources */,
 				FD5DD2972CAFF7CE00989CDF /* ProfileView.swift in Sources */,

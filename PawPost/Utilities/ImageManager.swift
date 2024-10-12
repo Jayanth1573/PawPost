@@ -8,6 +8,8 @@
 import Foundation
 import FirebaseStorage
 
+let imageCache = NSCache<AnyObject,UIImage>()
+
 class ImageManager {
     //MARK: Properties
     
@@ -33,6 +35,31 @@ class ImageManager {
         // save the image
         uploadImage(path: path, image: image) { success in
             handler(success)
+        }
+    }
+    
+    
+    func downloadProfileImage(userID: String, handler: @escaping (_ image: UIImage?) -> ()){
+        // get the path where image is saved
+        
+        let path = getProfileImagePath(userID: userID)
+        
+        // download image from path
+        downloadImage(path: path) { returnedImage in
+            handler(returnedImage)
+        }
+        
+    }
+    
+    
+    func downloadPostImage(postID: String, handler: @escaping (_ image: UIImage?) -> ()) {
+        // get path where image is saved
+        let path = getPostImagePath(postID: postID)
+        
+        // download image from path
+        
+        downloadImage(path: path) { returnedImage in
+            handler(returnedImage)
         }
     }
     
@@ -95,6 +122,27 @@ class ImageManager {
                 return
             }
         }
+    }
+    
+    private func downloadImage(path: StorageReference, handler: @escaping (_ image: UIImage?) -> ()){
+        
+        if let cachedImage = imageCache.object(forKey: path) {
+            handler(cachedImage)
+            return
+        } else {
+            path.getData(maxSize: 27 * 1024 * 1024) { returnedImageData, error in
+                if let data = returnedImageData, let image = UIImage(data: data) {
+                    imageCache.setObject(image, forKey: path)
+                    handler(image)
+                    return
+                } else {
+                    print("Error getting data from path for image")
+                    handler(nil)
+                    return
+                }
+            }
+        }
+        
     }
     
 }

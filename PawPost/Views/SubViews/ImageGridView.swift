@@ -29,5 +29,5 @@ struct ImageGridView: View {
 }
 
 #Preview {
-    ImageGridView(posts: PostArrayObject())
+    ImageGridView(posts: PostArrayObject(shuffled: true))
 }

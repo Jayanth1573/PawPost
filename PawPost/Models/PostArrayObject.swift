@@ -10,21 +10,32 @@ import Foundation
 class PostArrayObject: ObservableObject {
     @Published var dataArray = [PostModel]()
     
-    init() {
-        print("Fetch from database here")
-        let post1 = PostModel(postId: "", userId: "", username: "Jayanth",caption: "This is caption", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post2 = PostModel(postId: "", userId: "", username: "Utkarsh",caption: nil, dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post3 = PostModel(postId: "", userId: "", username: "Shantanu",caption: "This is a long long long long bla bla bla bla bla bla bla caption", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        let post4 = PostModel(postId: "", userId: "", username: "Shreyansh",caption: "This is caption", dateCreated: Date(), likeCount: 0, likedByUser: false)
-        
-        self.dataArray.append(post1)
-        self.dataArray.append(post2)
-        self.dataArray.append(post3)
-        self.dataArray.append(post4)
-    }
-    
     /// Used for single post selection
     init(post: PostModel) {
         self.dataArray.append(post)
+    }
+    
+    /// Used for getting posts for user profile
+    init(userID: String) {
+        print("get posts for userID: \(userID)")
+        DataService.instance.downloadPostForUser(userID: userID) { returnedPosts in
+            let sortedPosts = returnedPosts.sorted { post1, post2 in
+                return post1.dateCreated > post2.dateCreated
+            }
+            self.dataArray.append(contentsOf: sortedPosts)
+        }
+    }
+    
+    /// used for feed
+    init(shuffled: Bool){
+        print("get posts for feed shuffled: \(shuffled)")
+        DataService.instance.downloadPostForFeed { returnedPosts in
+            if shuffled {
+                let shuffledPosts = returnedPosts.shuffled()
+                self.dataArray.append(contentsOf: shuffledPosts)
+            } else {
+                self.dataArray.append(contentsOf: returnedPosts)
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BrowseView: View {
-    var posts = PostArrayObject()
+    var posts: PostArrayObject
     var body: some View {
         ScrollView {
             CarouselView()
@@ -22,7 +22,7 @@ struct BrowseView: View {
 
 #Preview {
     NavigationStack {
-        BrowseView()
+        BrowseView(posts: PostArrayObject(shuffled: true))
     }
     
 }

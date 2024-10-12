@@ -26,7 +26,7 @@ struct FeedView: View {
 struct FeedView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            FeedView(posts: PostArrayObject(), title: "Home test")
+            FeedView(posts: PostArrayObject(shuffled: false), title: "Home test")
         }
     }
 
