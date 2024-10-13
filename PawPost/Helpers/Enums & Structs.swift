@@ -28,10 +28,26 @@ struct DatabasePostField {
     static let dateCreated = "date_created"
     static let likeCount = "like_count" // Int
     static let likedBy = "liked_by" // Array
+    static let comments = "comments" // sub collection
+}
+
+struct DatabaseCommentField {
+    static let commentID = "comment_id"
+    static let displayName = "display_name"
+    static let userID = "user_id"
+    static let content = "content"
+    static let dateCreated = "date_created"
+    
+}
+
+struct DatabaseReportField {
+    static let postID = "post_id"
+    static let content = "content"
+    static let dateCreated = "date_created"
 }
 
 struct CurrentUserDefaults {
-    static let diplayName = "display_name"
+    static let displayName = "display_name"
     static let userID = "user_id"
     static let bio = "bio"
 }

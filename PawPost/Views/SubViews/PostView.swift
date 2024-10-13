@@ -20,6 +20,11 @@ struct PostView: View {
     @State var profileImage: UIImage = UIImage(named: "logo.loading")!
     @State var postImage: UIImage = UIImage(named: "logo.loading")!
     
+    // Alerts
+    @State var alertTitle: String = ""
+    @State var alertMessage: String = ""
+    @State var showAlert: Bool = false
+    
     @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
     enum PostActionSheetOption {
         case general
@@ -116,6 +121,17 @@ struct PostView: View {
     
     func reportPost(reason: String) {
         print("Report Post Now")
+        DataService.instance.uploadReport(reason: reason, postID: post.postId) { success in
+            if success {
+                self.alertTitle = "Reported!"
+                self.alertMessage = "Thanks for reporting!, We will take appropriate action."
+                self.showAlert.toggle()
+            } else {
+                self.alertTitle = "Error"
+                self.alertMessage = "There was an error reporting post. Try again later."
+                self.showAlert.toggle()
+            }
+        }
     }
     
     func sharePost() {
@@ -227,7 +243,7 @@ struct PostView: View {
                     
                     // MARK: Comment icon
                     NavigationLink {
-                        CommentsView()
+                        CommentsView(post: post)
                     } label: {
                         Image(systemName: "bubble.middle.bottom")
                             .font(.title3)
@@ -259,6 +275,10 @@ struct PostView: View {
         .onAppear {
             getImages()
         }
+        .alert(isPresented: $showAlert) {
+            return Alert(title: Text(alertTitle), message: Text(alertMessage),dismissButton: .default(Text("OK")))
+        }
+
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @AppStorage(CurrentUserDefaults.userID) var currentUserId: String?
-    @AppStorage(CurrentUserDefaults.diplayName) var currentDisplayName: String?
+    @AppStorage(CurrentUserDefaults.displayName) var currentDisplayName: String?
     
     let feedPosts = PostArrayObject(shuffled: false)
     let browsePosts = PostArrayObject(shuffled: true)

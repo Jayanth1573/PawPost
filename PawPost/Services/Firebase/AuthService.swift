@@ -63,7 +63,7 @@ class AuthService {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
                     //set the user data into our app
                     UserDefaults.standard.set(userID, forKey: CurrentUserDefaults.userID)
-                    UserDefaults.standard.set(name, forKey: CurrentUserDefaults.diplayName)
+                    UserDefaults.standard.set(name, forKey: CurrentUserDefaults.displayName)
                     UserDefaults.standard.set(bio, forKey: CurrentUserDefaults.bio)
                 }
               

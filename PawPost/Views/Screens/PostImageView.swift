@@ -15,7 +15,7 @@ struct PostImageView: View {
     @Binding var imageSelected: UIImage
     
     @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
-    @AppStorage(CurrentUserDefaults.diplayName) var CurrentUserDisplayName: String?
+    @AppStorage(CurrentUserDefaults.displayName) var CurrentUserDisplayName: String?
     
     // Alert
     @State var showAlert: Bool = false
