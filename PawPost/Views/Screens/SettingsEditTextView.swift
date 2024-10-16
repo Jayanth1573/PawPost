@@ -7,12 +7,70 @@
 
 import SwiftUI
 
+
+
 struct SettingsEditTextView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
     @State var submissionText: String = ""
     @State var title: String
     @State var description: String
     @State var placeholder: String
+    @State var settingsEditTextOption: SettingsEditTextOption
+    @Binding var profileText: String
+    @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
+    @State var showSuccessAlert: Bool = false
+    
+    // MARK: Functions
+    
+    func textIsAppropriate() -> Bool {
+        
+        if submissionText.count < 1 {
+            return false
+        }
+        return true
+    }
+    
+    func saveText() {
+        
+        guard let userID = currentUserID else {return}
+        switch settingsEditTextOption {
+        case .displayName:
+            
+            // update the name on UI
+            self.profileText = submissionText
+            
+            // update the name in user defaults
+            UserDefaults.standard.set(submissionText, forKey: CurrentUserDefaults.displayName)
+            
+            // update on all the user's posts
+            DataService.instance.updateDisplayNameOnPosts(userID: userID, displayName: submissionText)
+            
+            // update on the user's profile in DB
+            AuthService.instance.updateUserDisplayName(userID: userID, displayName: submissionText) { success in
+                if success {
+                    self.showSuccessAlert.toggle()
+                }
+            }
+        case .bio:
+            // update the name on UI
+            self.profileText = submissionText
+            
+            // update the name in user defaults
+            UserDefaults.standard.set(submissionText, forKey: CurrentUserDefaults.bio)
+            
+            // update on the user's profile in DB
+            AuthService.instance.updateUserBio(userID: userID, bio: submissionText) { success in
+                if success {
+                    self.showSuccessAlert.toggle()
+                }
+            }
+            
+        }
+    }
+    
+    // MARK: View
     var body: some View {
         VStack {
             HStack {
@@ -30,7 +88,9 @@ struct SettingsEditTextView: View {
                 .textInputAutocapitalization(.sentences)
             
             Button {
-                
+                if textIsAppropriate() {
+                    saveText()
+                }
             } label: {
                 Text("Save" .uppercased())
                     .font(.title3)
@@ -50,11 +110,22 @@ struct SettingsEditTextView: View {
         .padding()
         .frame(maxWidth: .infinity)
         .navigationTitle(title)
+        .alert(isPresented: $showSuccessAlert) {
+            return Alert(title: Text("Saved!"), dismissButton: .default(Text("OK"), action: {
+                self.presentationMode.wrappedValue.dismiss()
+            }))
+        }
     }
 }
 
-#Preview {
-    NavigationStack{
-        SettingsEditTextView(title: "Edit Display Name", description: "Description", placeholder: "placeholder")
+
+struct SettingsEditTextView_Previews: PreviewProvider {
+    @State static var text: String = ""
+    static var previews: some View {
+        NavigationStack {
+            SettingsEditTextView(title: "Edit Display Name", description: "Description", placeholder: "placeholder", settingsEditTextOption: .displayName, profileText: $text)
+        }
     }
+
 }
+

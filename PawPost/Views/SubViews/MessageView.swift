@@ -26,11 +26,19 @@ struct MessageView: View {
         HStack {
             
             // MARK: Profile image
-            Image(uiImage: profilePicture)
-                .resizable()
-                .scaledToFill()
-                .frame(width: 40, height: 40, alignment: .center)
-                .cornerRadius(20)
+            NavigationLink {
+                LazyView {
+                    ProfileView(isMyProfile: false, profileDisplayName: comment.username, profileId: comment.userId, posts: PostArrayObject(userID: comment.userId))
+                }
+            } label: {
+                Image(uiImage: profilePicture)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(width: 40, height: 40, alignment: .center)
+                    .cornerRadius(20)
+            }
+
+           
             
             VStack(alignment: .leading, spacing: 4) {
                 
