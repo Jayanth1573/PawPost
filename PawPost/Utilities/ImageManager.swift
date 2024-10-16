@@ -24,7 +24,11 @@ class ImageManager {
         let path = getProfileImagePath(userID: userID)
         
         // save the image
-        uploadImage(path: path, image: image) { _ in }
+        // multi-threading
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.uploadImage(path: path, image: image) { _ in }
+        }
+        
     }
     
     
@@ -33,9 +37,15 @@ class ImageManager {
         let path = getPostImagePath(postID: postID)
         
         // save the image
-        uploadImage(path: path, image: image) { success in
-            handler(success)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.uploadImage(path: path, image: image) { success in
+                // the changes should return to main thread
+                DispatchQueue.main.async {
+                    handler(success)
+                }
+            }
         }
+        
     }
     
     
@@ -45,10 +55,13 @@ class ImageManager {
         let path = getProfileImagePath(userID: userID)
         
         // download image from path
-        downloadImage(path: path) { returnedImage in
-            handler(returnedImage)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.downloadImage(path: path) { returnedImage in
+                DispatchQueue.main.async {
+                    handler(returnedImage)
+                }
+            }
         }
-        
     }
     
     
@@ -58,9 +71,14 @@ class ImageManager {
         
         // download image from path
         
-        downloadImage(path: path) { returnedImage in
-            handler(returnedImage)
+        DispatchQueue.global(qos: .userInteractive).async {
+            self.downloadImage(path: path) { returnedImage in
+                DispatchQueue.main.async {
+                    handler(returnedImage)
+                }
+            }
         }
+        
     }
     
     //MARK: Private functions
