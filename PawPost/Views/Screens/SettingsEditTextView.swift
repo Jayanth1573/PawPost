@@ -22,6 +22,8 @@ struct SettingsEditTextView: View {
     @AppStorage(CurrentUserDefaults.userID) var currentUserID: String?
     @State var showSuccessAlert: Bool = false
     
+    let haptics = UINotificationFeedbackGenerator()
+    
     // MARK: Functions
     
     func textIsAppropriate() -> Bool {
@@ -70,6 +72,11 @@ struct SettingsEditTextView: View {
         }
     }
     
+    func dismissView() {
+        haptics.notificationOccurred(.success)
+        self.presentationMode.wrappedValue.dismiss()
+    }
+    
     // MARK: View
     var body: some View {
         VStack {
@@ -112,7 +119,7 @@ struct SettingsEditTextView: View {
         .navigationTitle(title)
         .alert(isPresented: $showSuccessAlert) {
             return Alert(title: Text("Saved!"), dismissButton: .default(Text("OK"), action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismissView()
             }))
         }
     }

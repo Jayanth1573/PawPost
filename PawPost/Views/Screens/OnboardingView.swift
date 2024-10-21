@@ -94,13 +94,13 @@ struct OnboardingView: View {
                 .foregroundStyle(Color.MyTheme.purpleColor)
                 .padding()
             
-            Button {
-                showOnboardingPart2.toggle()
-            } label: {
-                SignInWithAppleButtonCustom()
-                    .frame(height: 60)
-                    .frame(maxWidth: .infinity)
-            }
+//            Button {
+//                showOnboardingPart2.toggle()
+//            } label: {
+//                SignInWithAppleButtonCustom()
+//                    .frame(height: 60)
+//                    .frame(maxWidth: .infinity)
+//            }
             
             Button {
                 vm.signInWithGoogle(view: self)

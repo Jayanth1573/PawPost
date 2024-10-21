@@ -214,6 +214,7 @@ struct PostView: View {
                     .onTapGesture(count: 2) {
                         if !post.likedByUser {
                             likePost()
+                            AnalyticsService.instance.likePostDoubleTap()
                         }
                     }
                 if addHeartAnimationToView {
@@ -233,6 +234,7 @@ struct PostView: View {
                         } else {
                             // like
                             likePost()
+                            AnalyticsService.instance.likePostHeartPressed()
                         }
                     } label: {
                         Image(systemName: post.likedByUser ? "heart.fill" : "heart")

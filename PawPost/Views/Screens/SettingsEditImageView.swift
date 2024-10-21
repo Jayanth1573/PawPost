@@ -21,6 +21,8 @@ struct SettingsEditImageView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @Binding var profileImage: UIImage
+    
+    let haptics = UINotificationFeedbackGenerator()
 
     // MARK: Functions
     
@@ -35,6 +37,11 @@ struct SettingsEditImageView: View {
         
         self.showSuccessAlert.toggle()
         
+    }
+    
+    func dismissView() {
+        haptics.notificationOccurred(.success)
+        self.presentationMode.wrappedValue.dismiss()
     }
     
     // MARK: View
@@ -88,7 +95,7 @@ struct SettingsEditImageView: View {
         .navigationTitle(title)
         .alert(isPresented: $showSuccessAlert) {
             return Alert(title: Text("Saved"),dismissButton: .default(Text("OK"), action: {
-                self.presentationMode.wrappedValue.dismiss()
+                dismissView()
             }))
         }
     }

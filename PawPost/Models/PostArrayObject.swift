@@ -53,5 +53,8 @@ class PostArrayObject: ObservableObject {
         let sumOfLikeCountArray = likeCountArray.reduce(0, +)
         print(sumOfLikeCountArray)
         self.likesCountString = "\(sumOfLikeCountArray)"
+        
+        
+        
     }
 }

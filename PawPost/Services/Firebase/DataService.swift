@@ -134,7 +134,7 @@ class DataService {
                         likedByUser = userIDArray.contains(userID)
                     }
                     
-                    let newPost = PostModel(postId: postID, userId: userID, username: displayName,caption: caption, dateCreated: date, likeCount: 0, likedByUser: likedByUser)
+                    let newPost = PostModel(postId: postID, userId: userID, username: displayName,caption: caption, dateCreated: date, likeCount: likeCount, likedByUser: likedByUser)
                     
                     postArray.append(newPost)
                 }
