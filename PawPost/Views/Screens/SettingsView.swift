@@ -11,6 +11,11 @@ struct SettingsView: View {
     
     @Environment(\.colorScheme) var colorScheme
     @Environment(\.presentationMode) var presentationMode
+    @State var showSignOutError: Bool = false
+    
+    @Binding var userDisplayName: String
+    @Binding var userBio: String
+    @Binding var userProfilePicture: UIImage
     
     // MARK: Functions
     func openCustonURL(urlstring: String) {
@@ -22,6 +27,21 @@ struct SettingsView: View {
             
     }
     
+    func signOut() {
+        AuthService.instance.logOutUser { success in
+            if success {
+                print("Successfully logged out")
+                
+                // dismiss settings view
+                presentationMode.wrappedValue.dismiss()
+            } else {
+                print("Error logging out")
+                self.showSignOutError.toggle()
+            }
+        }
+    }
+    
+    // MARK: View
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -44,26 +64,34 @@ struct SettingsView: View {
                 // MARK: Section 2: Profile
                 GroupBox {
                     NavigationLink {
-                        SettingsEditTextView(submissionText: "Current Display Name", title: "Display Name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here...")
+                        SettingsEditTextView(submissionText: userDisplayName, title: "Display Name", description: "You can edit your display name here. This will be seen by other users on your profile and on your posts!", placeholder: "Your display name here...", settingsEditTextOption: .displayName, profileText: $userDisplayName)
                     } label: {
                         SettingsRowView(leftIcon: "pencil", text: "Display name", color: Color.MyTheme.purpleColor)
                     }
 
                     NavigationLink {
-                        SettingsEditTextView(submissionText: "Current Bio here", title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be seen on your profile.", placeholder: "Your bio here...")
+                        SettingsEditTextView(submissionText: userBio, title: "Profile Bio", description: "Your bio is a great place to let other users know a little about you. It will be seen on your profile.", placeholder: "Your bio here...", settingsEditTextOption: .bio, profileText: $userBio)
                     } label: {
                         SettingsRowView(leftIcon: "text.quote", text: "Bio", color: Color.MyTheme.purpleColor)
                     }
                     
                     NavigationLink {
-                        SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your posts.", selectedImage: UIImage(named: "dog1")!)
+                        SettingsEditImageView(title: "Profile Picture", description: "Your profile picture will be shown on your posts.", selectedImage: userProfilePicture, profileImage: $userProfilePicture)
                     } label: {
                         SettingsRowView(leftIcon: "photo", text: "Profile Picture", color: Color.MyTheme.purpleColor)
                     }
 
+                    Button {
+                        signOut()
+                    } label: {
+                        SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                    }
+                    .alert(isPresented: $showSignOutError) {
+                        return Alert(title: Text("Error signing out!"))
+                    }
                     
                     
-                    SettingsRowView(leftIcon: "figure.walk", text: "Sign out", color: Color.MyTheme.purpleColor)
+                    
                 } label: {
                     SettingsLabelView(labelText: "Profile", labelImage: "person.fill")
                 }
@@ -129,6 +157,13 @@ struct SettingsView: View {
     }
 }
 
-#Preview {
-    SettingsView()
+struct SettingsView_Previews: PreviewProvider {
+    @State static var displayName: String = ""
+    @State static var bio: String = ""
+    @State static var profilePicture: UIImage = UIImage(named: "dog1")!
+    
+    static var previews: some View {
+        SettingsView(userDisplayName: $displayName, userBio: $bio, userProfilePicture: $profilePicture)
+    }
+
 }

@@ -10,10 +10,13 @@ import SwiftUI
 struct ProfileHeaderView: View {
     
     @Binding var profileDisplayName: String
+    @Binding var profileImage: UIImage
+    @ObservedObject var postArray: PostArrayObject
+    @Binding var profileBio: String
     var body: some View {
         VStack(spacing: 10) {
             // MARK: Profile Image
-            Image("dog1")
+            Image(uiImage: profileImage)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 120, height: 120, alignment: .center)
@@ -23,15 +26,18 @@ struct ProfileHeaderView: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
             // MARK: Bio
-            Text("This is area where user can add a bio to their profile bla bla.")
-                .font(.body)
-                .fontWeight(.regular)
-                .multilineTextAlignment(.center)
+            if profileBio != "" {
+                Text(profileBio)
+                    .font(.body)
+                    .fontWeight(.regular)
+                    .multilineTextAlignment(.center)
+            }
+            
             
             HStack(spacing: 20){
                 // MARK: Posts
                 VStack(spacing: 5){
-                    Text("5")
+                    Text(postArray.postCountString)
                         .font(.title2)
                         .fontWeight(.bold)
                     Capsule()
@@ -44,7 +50,7 @@ struct ProfileHeaderView: View {
                 
                 // MARK: Likes
                 VStack(spacing: 5){
-                    Text("20")
+                    Text(postArray.likesCountString)
                         .font(.title2)
                         .fontWeight(.bold)
                     Capsule()
@@ -63,9 +69,11 @@ struct ProfileHeaderView: View {
 
 struct ProfileHeaderView_Previews: PreviewProvider {
     @State static var name: String = "Jayanth"
+    @State static var image: UIImage = UIImage(named: "dog1")!
+    @State static var bio: String = "Demo bio"
     static var previews: some View {
-
-        ProfileHeaderView(profileDisplayName: $name)
+        
+        ProfileHeaderView(profileDisplayName: $name, profileImage: $image, postArray: PostArrayObject(shuffled: false), profileBio: $bio)
     }
-
+    
 }
