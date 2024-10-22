@@ -24,10 +24,18 @@ PawPost is an iOS application that allows pet lovers to share and browse picture
 **Database:** Firebase Firestore and Firebase Storage
 
 ## Screenshots
+![IMG_8808](https://github.com/user-attachments/assets/5cf26042-d92c-43d4-9b49-81079494c437)
 
 
+![IMG_8817](https://github.com/user-attachments/assets/98901d4c-d806-4e75-9af1-3a7d6f8cd6c6)
+![IMG_8815](https://github.com/user-attachments/assets/0bb2cfc4-bcd5-4e09-aa66-284d59df80a4)
+![IMG_8814](https://github.com/user-attachments/assets/a79a8139-c8a1-4309-89a1-0c5b1cf11b7e)
+![IMG_8813](https://github.com/user-attachments/assets/329eadef-45f1-4e48-82cf-b5f3104a8a4d)
+![IMG_8812](https://github.com/user-attachments/assets/64ae9c43-27c6-4809-a408-803f06a590c9)
+![IMG_8810](https://github.com/user-attachments/assets/eef32abe-4eaa-417a-acff-45d673e9871a)
+![IMG_8809](https://github.com/user-attachments/assets/cfd56360-e73c-4fe7-820a-4aa65a3f67aa)
 
-<img src="(https://github.com/Jayanth1573/PawPost/blob/main/PawPost/Images/IMG_8808.PNG)" alt="Screenshot 1" width="200" height="400" />
+
 <img src="(https://github.com/user-attachments/assets/ad111f20-4ffd-4295-937c-b08ebb80fa20)" alt="Screenshot 2" width="200" height="400" />
 <img src="(https://github.com/user-attachments/assets/b6ca8fdc-738c-44c8-8c21-da8196407d2f)" alt="Screenshot 3" width="200" height="400" />
 <img src="(https://github.com/user-attachments/assets/c1ec2236-65ac-46b0-b577-10fdeaf06ab2)" alt="Screenshot 4" width="200" height="400" />
