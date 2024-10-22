@@ -25,14 +25,16 @@ PawPost is an iOS application that allows pet lovers to share and browse picture
 
 ## Screenshots
 
-<img src="(https://github.com/user-attachments/assets/760e5d91-05b4-4eae-a12c-be4daeaa582a)" alt="Screenshot 1" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/41e7ccc5-06b2-4f2f-a066-0e745e1da2a7)" alt="Screenshot 2" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/120570dd-abe8-4bef-bd25-0d2137089339)" alt="Screenshot 3" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/11aa672a-4389-43cf-aa23-e0fbc3f66c99)" alt="Screenshot 4" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/c0715877-3813-4c2c-a885-c1a8f5d50077))" alt="Screenshot 5" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/b49b59ba-8c24-49f9-86fa-529890394f98)" alt="Screenshot 6" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/4a6b941b-18c3-4a4b-91a7-bec9f25cb672)" alt="Screenshot 7" width="200" height="400" />
-<img src="(https://github.com/user-attachments/assets/98aaca06-e707-4728-aa7d-3480efcfbd03)" alt="Screenshot 8" width="200" height="400" />
+
+
+<img src="(https://github.com/user-attachments/assets/3f5f1fb1-2a36-441e-a724-80bb62d6458b)" alt="Screenshot 1" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/ad111f20-4ffd-4295-937c-b08ebb80fa20)" alt="Screenshot 2" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/b6ca8fdc-738c-44c8-8c21-da8196407d2f)" alt="Screenshot 3" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/c1ec2236-65ac-46b0-b577-10fdeaf06ab2)" alt="Screenshot 4" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/7a675b21-048b-474a-afd4-51c593c14ef7)" alt="Screenshot 5" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/00eaa214-7184-418e-b311-a58f186129a5)" alt="Screenshot 6" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/76b10b0f-2a6e-4f95-8081-1e184809b358)" alt="Screenshot 7" width="200" height="400" />
+<img src="(https://github.com/user-attachments/assets/608deb32-36d3-4fd6-b9d7-b6cba17713ad)" alt="Screenshot 8" width="200" height="400" />
 
 
 
